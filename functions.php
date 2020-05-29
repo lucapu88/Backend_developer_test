@@ -2,7 +2,7 @@
 //pagina di tutte le funzioni utilizzate
 
 function connessione_db() { //login
-    include 'db-config.php';
+    include 'db_config.php';
     $conn = new mysqli($servername, $username, $password, $dbname);
     return $conn;
 }
@@ -20,17 +20,17 @@ function esegui_query($query) {
     }
 }
 
-function controlla_dati($node_id , $page_num, $page_size) { //controlla i dati passati:
-    if(
-        !empty($node_id) && // che non siano vuoti
-        is_numeric($page_num) && //che siano numeri
-        intval($page_size) >= 0 && //che sia maggiore o uguale a 0
-        intval($page_size) <= 1000  //che sia minore o uguale di 1000
-    ) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function controlla_dati($node_id, $page_num, $page_size) { //controlla i dati passati:
+//     if(
+//         !empty($node_id) && // che non siano vuoti
+//         is_numeric($page_num) && //che siano numeri
+//         intval($page_size) >= 0 && //che sia maggiore o uguale a 0
+//         intval($page_size) <= 1000  //che sia minore o uguale di 1000
+//     ) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
 ?>
